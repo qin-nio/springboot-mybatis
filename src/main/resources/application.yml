@@ -1,16 +1,15 @@
-#数据源
+# 数据源
 spring:
   datasource:
-    url: jdbc:mysql://39.100.39.63:3306/db_gupao_springboot?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    ### 在同一个网络中，bridge  pro-net   容器之间不仅可以通过ip访问，而且可以通过名称
+    url: jdbc:mysql://my-mysql:3306/db_gupao_springboot?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
     username: root
-    password: abc123
+    password: jack123
     driver-class-name: com.mysql.cj.jdbc.Driver
 
-#mybatis托管mapper文件
+# mybatis托管mapper文件
 mybatis:
   mapper-locations: classpath:mapper/*.xml
 
-server:
-  port: 8088
 
 

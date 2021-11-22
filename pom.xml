@@ -48,29 +48,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-
-			<plugin>
-				<groupId>com.spotify</groupId>
-				<artifactId>docker-maven-plugin</artifactId>
-				<version>1.2.0</version>
-				<configuration>
-					<!-- docker镜像名称 -->
-					<imageName>jack/${project.artifactId}</imageName>
-					<!-- 需要的基础镜像 -->
-					<baseImage>java:8</baseImage>
-					<!-- docker启动的时候执行的命令 -->
-					<entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
-					<resources>
-						<resource>
-							<targetPath>/</targetPath>
-							<directory>${project.build.directory}</directory>
-							<include>${project.build.finalName}.jar</include>
-						</resource>
-					</resources>
-				</configuration>
-			</plugin>
 		</plugins>
-
 
 	</build>
 
